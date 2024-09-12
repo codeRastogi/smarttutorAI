@@ -1,5 +1,6 @@
 import { useAITeacher } from "@/hooks/useAITeacher";
 import { useEffect, useRef } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 export const MessagesList = () => {
   const messages = useAITeacher((state) => state.messages);
@@ -52,13 +53,17 @@ export const MessagesList = () => {
     >
       {messages.length === 0 && (
         <div className="h-full w-full grid place-content-center text-center">
-          <h2 className="text-8xl font-bold text-white/90 italic">
-            Wawa Sensei
+          <h2 className="text-6xl font-bold text-white italic">
+            Smart Tutor
             <br />
-            Japanese Language School
+            Universal Learning, Simplified
           </h2>
-          <h2 className="text-8xl font-bold font-jp text-red-600/90 italic">
-            ワワ先生日本語学校
+          <h2 className="text-6xl font-bold font-jp text-yellow-200 italic">
+            <TypeAnimation
+              sequence={['Welcome...', 1000, 'स्वागतम् !!!', 1000, ' 欢迎', 1000, 'ようこそ',1000]}
+             
+              repeat={Infinity}
+            />
           </h2>
         </div>
       )}
